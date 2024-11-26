@@ -1,316 +1,128 @@
 ﻿@model TbProduct
 @{
-    List<TbProductReview> productReview = ViewBag.productReview;
-    List<TbProduct> productRelated = ViewBag.productRelated;
+	List<TbProductReview> productReview = ViewBag.productReview;
+	List<TbProduct> productRelated = ViewBag.productRelated;
 }
 <!-- Begin Main Content Area  -->
-<main class="main-content">
-    <div class="breadcrumb-area breadcrumb-height" data-bg-image="assets/images/breadcrumb/bg/1-1-1920x373.jpg">
-        <div class="container h-100">
-            <div class="row h-100">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-item">
-                        <h2 class="breadcrumb-heading">Product Style</h2>
-                        <ul>
-                            <li>
-                                <a href="index.html">Home <i class="pe-7s-angle-right"></i></a>
-                            </li>
-                            <li>Single Product</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="single-product-area section-space-top-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="single-product-img h-100">
-                        <div class="swiper-container single-product-slider">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <a href="@Model.Image" class="single-img gallery-popup">
-                                        <img class="img-full" src="@Model.Image" alt="Product Image">
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="@Model.Image" class="single-img gallery-popup">
-                                        <img class="img-full" src="@Model.Image" alt="Product Image">
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="@Model.Image" class="single-img gallery-popup">
-                                        <img class="img-full" src="@Model.Image" alt="Product Image">
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="@Model.Image" class="single-img gallery-popup">
-                                        <img class="img-full" src="@Model.Image" alt="Product Image">
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Add Pagination -->
-                            <div class="swiper-pagination"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="product-thumb-with-content row">
-                        <div class="col-12 order-lg-1 order-2 pt-10 pt-lg-0">
-                            <div class="single-product-content">
-                                <h2 class="title">@Model.Title</h2>
-                                <div class="price-box pb-1">
-                                    @if (Model.PriceSale == 0)
-                                    {
-                                        <span class="new-price text-danger">@Model.Price</span>
-                                    }
-                                    else
-                                    {
-                                        <span class="new-price text-danger">@Model.Price</span>
-                                        <span class="old-price text-primary">@Model.PriceSale</span>
-                                    }
+<section class="ftco-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 mb-5 ftco-animate">
+				<a href="images/product-1.jpg" class="image-popup"><img src="@Model.Image" class="img-fluid" alt="Colorlib Template"></a>
+			</div>
+			<div class="col-lg-6 product-details pl-md-5 ftco-animate">
+				<h3>@Model.Title</h3>
+				<div class="rating d-flex">
+					<p class="text-left mr-4">
+						<a href="#" class="mr-2">@Model.Star</a>
+						@for(var i =0; i< Model.Star;i++)
+						{
+							<a href="#"><span class="ion-ios-star-outline"></span></a>
+						}
 
-                                </div>
-                                <div class="rating-box-wrap pb-7">
-                                    <div class="rating-box">
-                                        <ul>
-                                            @for (var i = 0; i < Model.Star; i++)
-                                            {
-                                                <li><i class="pe-7s-star"></i></li>
-                                            }
+					</p>
+					<p class="text-left mr-4">
+						<a href="#" class="mr-2" style="color: #000;">100 <span style="color: #bbb;">Rating</span></a>
+					</p>
+					<p class="text-left">
+						<a href="#" class="mr-2" style="color: #000;">500 <span style="color: #bbb;">Sold</span></a>
+					</p>
+				</div>
+				<p class="price"><span>@Model.Price</span></p>
+				<p>
+					@Model.Description
+				</p>
+				<div class="row mt-4">
+					<div class="col-md-6">
+						<div class="form-group d-flex">
+							<div class="select-wrap">
+								<div class="icon"><span class="ion-ios-arrow-down"></span></div>
+								<select name="" id="" class="form-control">
+									<option value="">Small</option>
+									<option value="">Medium</option>
+									<option value="">Large</option>
+									<option value="">Extra Large</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="w-100"></div>
+					<div class="input-group col-md-6 d-flex mb-3">
+						<span class="input-group-btn mr-2">
+							<button type="button" class="quantity-left-minus btn" data-type="minus" data-field="">
+								<i class="ion-ios-remove"></i>
+							</button>
+						</span>
+						<input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+						<span class="input-group-btn ml-2">
+							<button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
+								<i class="ion-ios-add"></i>
+							</button>
+						</span>
+					</div>
+					<div class="w-100"></div>
+					<div class="col-md-12">
+						<p style="color: #000;">600 kg available</p>
+					</div>
+				</div>
+				<p><a href="cart.html" class="btn btn-black py-3 px-5">Add to Cart</a></p>
+			</div>
+		</div>
+	</div>
+</section>
 
-                                        </ul>
-                                    </div>
-                                    <div class="review-status ps-4">
-                                        <a href="javascript:void(0)">( @productReview.Count() Customer Review )</a>
-                                    </div>
-                                </div>
-                                <p class="short-desc mb-6">
-                                    @Model.Description
-                                </p>
-                                <ul class="quantity-with-btn pb-7">
-                                    <li class="quantity">
-                                        <div class="cart-plus-minus">
-                                            <input class="cart-plus-minus-box" value="1" type="text">
-                                        </div>
-                                    </li>
-                                    <li class="add-to-cart">
-                                        <a class="btn btn-custom-size lg-size btn-primary btn-secondary-hover rounded-0" href="cart.html">Add to cart</a>
-                                    </li>
-                                    <li class="wishlist-btn-wrap">
-                                        <a class="btn rounded-0" href="wishlist.html">
-                                            <i class="pe-7s-like"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="product-category text-matterhorn pb-2">
-                                    <span class="title">Categories :</span>
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:void(0)">Natural,</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">Organic,</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">Beautiful,</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">Organic Food</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="product-category product-tags text-matterhorn pb-4">
-                                    <span class="title">Product Tags :</span>
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:void(0)">Organic,</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">Vegetable,</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">Fruits</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="social-link align-items-center pb-lg-8">
-                                    <span class="title pe-3">Share:</span>
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <i class="fa fa-pinterest-p"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <i class="fa fa-tumblr"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <i class="fa fa-dribbble"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 order-lg-2 order-1 pt-10 pt-lg-0">
-                            <div class="swiper-container single-product-thumbs">
-                                <div class="swiper-wrapper">
-                                    <a href="javascript:void(0)" class="swiper-slide">
-                                        <img class="img-full" src="@Model.Image" alt="Product Thumnail">
-                                    </a>
-                                    <a href="javascript:void(0)" class="swiper-slide">
-                                        <img class="img-full" src="@Model.Image" alt="Product Thumnail">
-                                    </a>
-                                    <a href="javascript:void(0)" class="swiper-slide">
-                                        <img class="img-full" src="@Model.Image" alt="Product Thumnail">
-                                    </a>
-                                    <a href="javascript:void(0)" class="swiper-slide">
-                                        <img class="img-full" src="@Model.Image" alt="Product Thumnail">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="product-tab-area section-space-top-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="nav product-tab-nav product-tab-style-2" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <a class="active btn btn-custom-size" id="description-tab" data-bs-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">
-                                Description
-                            </a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="btn btn-custom-size" id="reviews-tab" data-bs-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">
-                                Reviews
-                            </a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="btn btn-custom-size" id="shipping-tab" data-bs-toggle="tab" href="#shipping" role="tab" aria-controls="shipping" aria-selected="false">
-                                Shipping
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="tab-content product-tab-content">
-                        <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-                            <div class="product-description-body">
-                                <p class="short-desc mb-0">
-                                    @Html.Raw(Model.Detail)
-                                </p>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
-                            <div class="product-review-body">
-                                <h4 class="heading mb-5">@productReview.Count() Review Items</h4>
-                                <ul class="user-info-wrap">
-                                    @foreach (var item in productReview)
-                                    {
-                                        <li>
-                                            <ul class="user-info">
-                                                <li class="user-avatar">
-                                                    <img src="assets/images/testimonial/user/1.png" alt="User Image">
-                                                </li>
-                                                <li class="user-comment">
-                                                    <div class="rating-box">
-                                                        <ul>
-                                                            @for (var i = 0; i < item.Star; i++)
-                                                            {
-                                                                <li><i class="pe-7s-star"></i></li>
-                                                            }
-                                                        </ul>
-                                                    </div>
-                                                    <div class="meta">
-                                                        <span><strong>@item.Name</strong> March 15, 2021</span>
-                                                    </div>
-                                                    <p class="short-desc mb-0">
-                                                        @item.Detail
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    }
+<section class="ftco-section">
+	<div class="container">
+		<div class="row justify-content-center mb-3 pb-3">
+			<div class="col-md-12 heading-section text-center ftco-animate">
+				<span class="subheading">Products</span>
+				<h2 class="mb-4">Related Products</h2>
+				<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			@foreach(var item in productRelated)
+			{
+				<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="product">
+						<a href="#" class="img-prod">
+							<img class="img-fluid" src="@item.Image" alt="Colorlib Template">
+							<div class="overlay"></div>
+						</a>
+						<div class="text py-3 pb-4 px-3 text-center">
+							<h3><a href="#">@item.Title</a></h3>
+							<div class="d-flex">
+								<div class="pricing">
+									@if(item.PriceSale == 0)
+									{
+										<p class="price"><span>$@item.Price</span></p>
+									}
+									else{
+										<p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">$80.00</span></p>
+									}
+								</div>
+							</div>
+							<div class="bottom-area d-flex px-3">
+								<div class="m-auto d-flex">
+									<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+										<span><i class="ion-ios-menu"></i></span>
+									</a>
+									<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+										<span><i class="ion-ios-cart"></i></span>
+									</a>
+									<a href="#" class="heart d-flex justify-content-center align-items-center ">
+										<span><i class="ion-ios-heart"></i></span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			}
+			
+		</div>
+	</div>
+</section>
 
-
-                                </ul>
-                                <div class="feedback-area pt-5">
-                                    <h2 class="heading mb-1">Add a review</h2>
-                                    <p class="short-desc mb-3">Your email address will not be published.</p>
-                                    <div class="rating-box">
-                                        <span>Your rating</span>
-                                        <ul class="ps-4">
-                                            <li><i class="pe-7s-star"></i></li>
-                                            <li><i class="pe-7s-star"></i></li>
-                                            <li><i class="pe-7s-star"></i></li>
-                                            <li><i class="pe-7s-star"></i></li>
-                                            <li><i class="pe-7s-star"></i></li>
-                                        </ul>
-                                    </div>
-                                    <form class="feedback-form pt-8" action="#">
-                                        <div class="group-input">
-                                            <div class="form-field me-md-6 mb-6 mb-md-0">
-                                                <input type="text" name="name" placeholder="Your Name*" class="input-field">
-                                            </div>
-                                            <div class="form-field me-md-6 mb-6 mb-md-0">
-                                                <input type="text" name="email" placeholder="Your Email*" class="input-field">
-                                            </div>
-                                            <div class="form-field">
-                                                <input type="text" name="number" placeholder="Phone number" class="input-field">
-                                            </div>
-                                        </div>
-                                        <div class="form-field mt-6">
-                                            <textarea name="message" placeholder="Message" class="textarea-field"></textarea>
-                                        </div>
-                                        <div class="button-wrap mt-8">
-                                            <button type="submit" value="submit" class="btn btn-custom-size lg-size btn-secondary btn-primary-hover btn-lg rounded-0" name="submit">Submit</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="shipping" role="tabpanel" aria-labelledby="shipping-tab">
-                            <div class="product-shipping-body">
-                                <h4 class="title">Shipping</h4>
-                                <p class="short-desc mb-4">
-                                    The item will be shipped from China. So it need 15-20 days to
-                                    deliver. Our product is good with reasonable price and we believe you will worth it.
-                                    So please wait for it patiently! Thanks.Any question please kindly to contact us and
-                                    we promise to work hard to help you to solve the problem
-                                </p>
-                                <h4 class="title">About return request</h4>
-                                <p class="short-desc mb-4">
-                                    If you don't need the item with worry, you can contact us
-                                    then we will help you to solve the problem, so please close the return request!
-                                    Thanks
-                                </p>
-                                <h4 class="title">Guarantee</h4>
-                                <p class="short-desc mb-0">
-                                    If it is the quality question, we will resend or refund to
-                                    you; If you receive damaged or wrong items, please contact us and attach some
-                                    pictures about product, we will exchange a new correct item to you after the
-                                    confirmation.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-   
-</main>
-<!-- Main Content Area End Here  -->
