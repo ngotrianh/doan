@@ -1,15 +1,16 @@
 ﻿@model IEnumerable<nhom17.Models.TbProduct>
 
-    @foreach(var item in Model)
-    {
+@foreach(var item in Model)
+{
+    string sUrl = $"/product/{item.Alias}-{item.ProductId}.html";
     <div class="col-md-6 col-lg-3 ftco-animate">
         <div class="product">
-            <a href="#" class="img-prod">
+            <a href="@sUrl" class="img-prod">
                 <img class="img-fluid" src="@item.Image" alt="Colorlib Template">
                 <div class="overlay"></div>
             </a>
             <div class="text py-3 pb-4 px-3 text-center">
-                <h3><a href="#">@item.Title</a></h3>
+                <h3><a href="@sUrl">@item.Title</a></h3>
                 <div class="d-flex">
                     <div class="pricing">
                         <p class="price"><span>@item.Price</span></p>
