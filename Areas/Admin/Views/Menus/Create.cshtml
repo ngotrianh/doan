@@ -1,0 +1,93 @@
+﻿@model nhom17.Models.TbMenu
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>thêm menu</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">General Form</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">thêm menu</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form asp-action=" Create">
+                            <div class="card-body">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label asp-for="Title" class="control-lable col-12 "> tiêu đề </label>
+                                    <input asp-for="Title" class="from-control col-12" />
+                                    <span asp-validation-for="Title" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Description" class="control-lable col-12 "> mô tả</label>
+                                    <input asp-for="Description" class="from-control col-12" />
+                                    <span asp-validation-for="Description" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Levels" class="control-lable col-12"> mức </label>
+                                    <input asp-for="Levels" class="from-control col-12" />
+                                    <span asp-validation-for="Levels" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ParentId" class="control-lable col-12"> menu cha </label>
+                                    <input asp-for="ParentId" class="from-control col-12" />
+                                    <span asp-validation-for="ParentId" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label asp-for="Position" class="control-lable col-12"> vị trí </label>
+                                    <input asp-for="Position" class="from-control col-12" />
+                                    <span asp-validation-for="Position" class="text-danger"></span>
+                                </div>
+                                <div class="form-group from-check">
+                                    <label class="from-check-lable">
+                                        <input class="from-check-input" asp-for="IsActive" /> hiển thị
+                                    </label>
+                                </div>
+
+
+
+
+
+
+                            </div>
+                            <!-- /.card-body -->
+
+                            <div class="from-group">
+                                <input type="submit" value="thêm mới" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.card -->
+
+                </div>
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>

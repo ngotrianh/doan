@@ -584,3 +584,4 @@ D:\doan\nhom17\nhom17\obj\Debug\net8.0\nhom17.pdb
 D:\doan\nhom17\nhom17\obj\Debug\net8.0\nhom17.genruntimeconfig.cache
 D:\doan\nhom17\nhom17\obj\Debug\net8.0\ref\nhom17.dll
 D:\doan\nhom17\nhom17\obj\Debug\net8.0\nhom17.sourcelink.json
+D:\doan\nhom17\nhom17\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_Layout.cshtml.rz.scp.css
