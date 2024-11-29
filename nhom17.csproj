@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\admin\lib\elFinder\files\.trash\.gitkeep" />
+    <None Include="wwwroot\admin\lib\elFinder\php\.tmp\.htaccess" />
     <None Include="wwwroot\assets\css\.DS_Store" />
     <None Include="wwwroot\assets\css\bootstrap\.DS_Store" />
     <None Include="wwwroot\assets\css\css\.DS_Store" />
@@ -37,7 +39,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="wwwroot\files\" />
   </ItemGroup>
 
 </Project>
